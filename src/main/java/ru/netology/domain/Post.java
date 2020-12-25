@@ -7,13 +7,78 @@ public class Post {
     int ownerSpaceUserId; // айди владельца, где размешен пост
     int wroteUserId; // айди того кто написал пост
     int date; // когда размещен пост
-    boolean canEdit;
-    boolean canDelete;
+    int createdBy;// идентификатор администратора который опубликовал запись
+    int replyOwnerId;//идентификатор владельца записи, в ответ на которую была оставлена текущая
+    int replyPostId;//идентификатор записи, в ответ на которую была оставлена текущая
+    int friendsOnly;//если запись была создана с опцией «Только для друзей»
+
+
+    boolean canEdit; //может ли пользователь редактировать пост
+    boolean canDelete; //может ли пользователь удалять пост
+    boolean canPin;// может ли текущий пользователь закреплять запись
+    boolean IsPinned;//информация о том, закреплена ли запись
     LikesInfo likesInfo;
     CommentsInfo commentsInfo;
     Repostinfo repostinfo;
     DislikesInfo dislikesInfo;
     ViewsInfo viewsInfo;
+    GeoInfo geoInfo;
+
+    public int getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(int createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public int getReplyOwnerId() {
+        return replyOwnerId;
+    }
+
+    public void setReplyOwnerId(int replyOwnerId) {
+        this.replyOwnerId = replyOwnerId;
+    }
+
+    public int getReplyPostId() {
+        return replyPostId;
+    }
+
+    public void setReplyPostId(int replyPostId) {
+        this.replyPostId = replyPostId;
+    }
+
+    public int getFriendsOnly() {
+        return friendsOnly;
+    }
+
+    public void setFriendsOnly(int friendsOnly) {
+        this.friendsOnly = friendsOnly;
+    }
+
+    public boolean isCanPin() {
+        return canPin;
+    }
+
+    public void setCanPin(boolean canPin) {
+        this.canPin = canPin;
+    }
+
+    public boolean isPinned() {
+        return IsPinned;
+    }
+
+    public void setPinned(boolean pinned) {
+        IsPinned = pinned;
+    }
+
+    public GeoInfo getGeoInfo() {
+        return geoInfo;
+    }
+
+    public void setGeoInfo(GeoInfo geoInfo) {
+        this.geoInfo = geoInfo;
+    }
 
     public String getText() {
         return text;
